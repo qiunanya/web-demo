@@ -16,4 +16,12 @@
             line-height: 0;
         }
     }
+    /*内容模块*/
+    .content{
+        display: flex;
+        flex-wrap: wrap;
+        .item_right{
+            padding: 15px;
+        }
+    }
 }
