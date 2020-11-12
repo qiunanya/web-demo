@@ -37,6 +37,14 @@ const routes = [
                 meta:{
                     title: '测试页面'
                 }
+            },
+            {
+                path: '/transform',
+                name: 'transform',
+                component: () => import('@/views/templates/transform'),
+                meta:{
+                    title: 'transform 动画案例'
+                }
             }
         ],
     },
