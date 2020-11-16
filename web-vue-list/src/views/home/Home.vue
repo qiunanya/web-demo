@@ -3,6 +3,7 @@
     <div class="home_wap">
       <img src="@/assets/logo.png" alt srcset />
       <h2>WEB 前端 CSS3.0 JS HTML5 技术</h2>
+      <p class="author">制作人：邱南亚  (人无信不立)</p>
     </div>
     <div class="content">
         <div class="item_left">

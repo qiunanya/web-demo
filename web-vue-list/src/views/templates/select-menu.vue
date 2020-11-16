@@ -6,7 +6,7 @@
                 <p>{{value ? value:'请选择'}}</p>
                 <Icon type="ios-arrow-down" />
             </div>
-             <Button type="success" @click="clear">清除已选值</Button>
+            <Button type="success" @click="clear">清除已选值</Button>
             <div :class="['list-menu',{'active': show }]">
                 <ul>
                     <li :class="['item',{'selected':index == i}]" v-for="(item,i) in list" :key="item.id" @click="getItem(item,i)"> {{ item.title }} </li>
@@ -82,7 +82,19 @@ export default {
             display: flex;
             align-items: center;
             cursor: pointer;
+            border: 1px solid #bbbbbb;
+            border-radius: 6px;
+            padding: 0 12px;
+            &:hover{
+                border: 1px solid #16a596;
+                box-shadow: 1px 5px 10px #16a596;
+            }
         }
+       button{
+           position: absolute;
+           top: -4px;
+           left: 132px;
+       } 
        .list-menu{
             border-radius: 6px;
             background-color: #3F536E;

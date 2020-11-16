@@ -45,6 +45,14 @@ const routes = [
                 meta:{
                     title: 'transform 动画案例'
                 }
+            },
+            {
+                path: '/transition',
+                name: 'transition',
+                component: () => import('@/views/templates/transition'),
+                meta:{
+                    title: 'transition 过度动画页面'
+                }
             }
         ],
     },
