@@ -53,6 +53,22 @@ const routes = [
         meta: {
           title: 'transition 过度动画页面'
         }
+      },
+      {
+        path: '/scale',
+        name: 'scale',
+        component: () => import('@/views/templates/scale'),
+        meta: {
+          title: 'scale 图片放大效果'
+        }
+      },
+      {
+        path: '/ligth',
+        name: 'ligth',
+        component: () => import('@/views/templates/ligth'),
+        meta: {
+          title: 'ligth 跑马灯效果'
+        }
       }
     ]
   },
