@@ -20,25 +20,25 @@
 </template>
 <script>
 export default {
-    name:'w3c',
-    components:{},
-    data() {
-        return {
-           flag:false,
-           flag4:false 
-        }
+  name: 'w3c',
+  components: {},
+  data () {
+    return {
+      flag: false,
+      flag4: false
+    }
+  },
+  methods: {
+    test () {
+      this.flag = !this.flag
     },
-    methods: {
-        test(){
-            this.flag = !this.flag
-        },
-        test4(){
-            this.flag4 = !this.flag4
-        }
-    },
-    mounted() {
-        
-    },
+    test4 () {
+      this.flag4 = !this.flag4
+    }
+  },
+  mounted () {
+
+  }
 }
 </script>
 <style lang="scss">
@@ -90,6 +90,6 @@ export default {
                 margin-top: 15px;
             }
         }
-        
+
     }
 </style>

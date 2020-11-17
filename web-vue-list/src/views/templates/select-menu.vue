@@ -17,61 +17,61 @@
 </template>
 <script>
 export default {
-    name:'select-menu',
-    components:{},
-    data() {
-        return {
-            value: '',
-            show: false,
-            index: -1,
-            list : [
-                {
-                    id: 1,
-                    title: '张三',
-                    rightDetail: '2019-03-18',
-                    detail: 'XXXXXXXXXXXXXXXXXXX公司',
-                    slide_x: 0
-                },
-                {
-                    id: 2,
-                    surname: '李',
-                    title: '李二牛',
-                    rightDetail: '2019-03-17',
-                    detail: 'XXXXXXXXXXXXXXXXXXX公司',
-                    slide_x: 0
-                },
-                {
-                    id: 3,
-                    surname: '李',
-                    title: '斯洛克',
-                    rightDetail: '2019-03-17',
-                    detail: 'XXXXXXXXXXXXXXXXXXX公司',
-                    slide_x: 0
-                }
-            ],
-        }
-    },
-    created() {
-        
-    },
-    methods: {
-        getItem(item , i){
-            this.index = i
-            console.log(item,6666);
-            this.value = item.title
-            this.show = !this.show
+  name: 'select-menu',
+  components: {},
+  data () {
+    return {
+      value: '',
+      show: false,
+      index: -1,
+      list: [
+        {
+          id: 1,
+          title: '张三',
+          rightDetail: '2019-03-18',
+          detail: 'XXXXXXXXXXXXXXXXXXX公司',
+          slide_x: 0
         },
-        showModel(){
-            this.show = !this.show
-            console.log(this.show,6666);	
+        {
+          id: 2,
+          surname: '李',
+          title: '李二牛',
+          rightDetail: '2019-03-17',
+          detail: 'XXXXXXXXXXXXXXXXXXX公司',
+          slide_x: 0
         },
-        clear(){
-            this.value = ''
+        {
+          id: 3,
+          surname: '李',
+          title: '斯洛克',
+          rightDetail: '2019-03-17',
+          detail: 'XXXXXXXXXXXXXXXXXXX公司',
+          slide_x: 0
         }
+      ]
+    }
+  },
+  created () {
+
+  },
+  methods: {
+    getItem (item, i) {
+      this.index = i
+      console.log(item, 6666)
+      this.value = item.title
+      this.show = !this.show
     },
-    mounted() {
-        
+    showModel () {
+      this.show = !this.show
+      console.log(this.show, 6666)
     },
+    clear () {
+      this.value = ''
+    }
+  },
+  mounted () {
+
+  }
 }
 </script>
 <style lang="scss">
@@ -94,7 +94,7 @@ export default {
            position: absolute;
            top: -4px;
            left: 132px;
-       } 
+       }
        .list-menu{
             border-radius: 6px;
             background-color: #3F536E;
@@ -117,6 +117,6 @@ export default {
             &.active{
                 height: 100px;
             }
-        } 
-   } 
+        }
+   }
 </style>

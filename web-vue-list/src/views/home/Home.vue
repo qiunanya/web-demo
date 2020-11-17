@@ -25,34 +25,29 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-  name: "Home",
-  components: {
-    HelloWorld,
-  },
-  data() {
-      return {
-          menuList:[],
-          flag: 'ligth'
-      }
+  name: 'Home',
+  data () {
+    return {
+      menuList: [],
+      flag: 'ligth'
+    }
   },
   methods: {
-      /**
+    /**
        * @description 路由选择
        * @param path 路由地址
        */
-      getItem(path){
-          this.$router.push(path)
-          console.log(path);
-      }
+    getItem (path) {
+      this.$router.push(path)
+      console.log(path)
+    }
   },
-  mounted() {
-      this.menuList = this.$router.options.routes
-  },
-};
+  mounted () {
+    this.menuList = this.$router.options.routes
+  }
+}
 </script>
 <style lang="scss" src="./style.scss">
 </style>

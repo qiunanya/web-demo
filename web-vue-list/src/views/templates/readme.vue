@@ -7,21 +7,20 @@
 </template>
 <script>
 export default {
-    name:'readme',
-    components:{},
-    data() {
-        return {
-            
-        }
-    },
-    created() {
-        
-    },
-    methods: {
-        
-    },
-    mounted() {
-        
-    },
+  name: 'readme',
+  components: {},
+  data () {
+    return {
+
+    }
+  },
+  created () {
+
+  },
+  methods: {
+  },
+  mounted () {
+
+  }
 }
 </script>

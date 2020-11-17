@@ -5,33 +5,33 @@
             <div class="box"></div>
         </div>
         <div class="container item_2">
-            <h2> scale(2,0.5) 横向放大，纵向缩小 scale(1.5):当横向和纵向都放大1.5倍</h2>   
+            <h2> scale(2,0.5) 横向放大，纵向缩小 scale(1.5):当横向和纵向都放大1.5倍</h2>
             <div class="box"></div>
         </div>
         <div class="container item_3">
-            <h2> transition 过度动画</h2>   
+            <h2> transition 过度动画</h2>
             <div class="box"></div>
         </div>
     </div>
 </template>
 <script>
 export default {
-    name:'transform',
-    components:{},
-    data() {
-        return {
-            
-        }
-    },
-    created() {
-        
-    },
-    methods: {
-        
-    },
-    mounted() {
-        
-    },
+  name: 'transform',
+  components: {},
+  data () {
+    return {
+
+    }
+  },
+  created () {
+
+  },
+  methods: {
+
+  },
+  mounted () {
+
+  }
 }
 </script>
 <style lang="scss">
@@ -42,7 +42,7 @@ export default {
             .box{
                 width: 100px;
                 height: 100px;
-                background-color: pink;  
+                background-color: pink;
                 -webkit-transform: translate(10px,20px);/**兼容谷歌和苹果 */
                 -moz-transform: translate(10px,20px);/**兼容火狐 */
                 -ms-transform: translate(10px,20px);/**兼容ie */
@@ -54,7 +54,7 @@ export default {
             .box{
                 width: 200px;
                 height: 200px;
-                background-color: red;  
+                background-color: red;
                 // 横向放大，纵向缩小
                 -webkit-transform: scale(2,0.5);/**兼容谷歌和苹果 */
                 -moz-transform: scale(2,0.5);/**兼容火狐 */
@@ -67,11 +67,11 @@ export default {
             .box{
                 width: 200px;
                 height: 200px;
-                background-color: skyblue;  
-                
+                background-color: skyblue;
+
             }
         }
-        
+
     }
-    
+
 </style>
