@@ -1,3 +1,5 @@
+### 2020-12-02 数组操作from，of，concat，every，fill，filter，find，findIndex
+
 ### 2020-11-17 矫正项目全局格式均空两格
 
 ### 2020-11-16 增加transition动画测试，变形，变色等功能
