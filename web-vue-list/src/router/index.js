@@ -75,9 +75,6 @@ const routes = [
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: Home,
     meta: {
       title: '关于项目',
@@ -90,6 +87,25 @@ const routes = [
         component: () => import('@/views/templates/readme'),
         meta: {
           title: '项目地址'
+        }
+      }
+    ]
+  },
+  {
+    path: '/array',
+    name: 'array',
+    component: Home,
+    meta: {
+      title: '数组操作',
+      icon: 'ios-apps'
+    },
+    children: [
+      {
+        path: '/array-action',
+        name: 'array-action',
+        component: () => import('@/views/templates/array-action'),
+        meta: {
+          title: '数组'
         }
       }
     ]

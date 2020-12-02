@@ -23,8 +23,12 @@
     /*内容模块*/
     .content{
         display: flex;
-        flex-wrap: wrap;
+        // flex-wrap: wrap;
         .item_right{
+            width: 87vw;
+            height: 87vh;
+            overflow: hidden;
+            overflow-y: scroll;
             padding: 15px;
         }
     }
