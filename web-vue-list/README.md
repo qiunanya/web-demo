@@ -1,3 +1,5 @@
+### 2020-12-02 增加数组操作函数的语法格式
+
 ### 2020-12-02 数组操作from，of，concat，every，fill，filter，find，findIndex
 
 ### 2020-11-17 矫正项目全局格式均空两格
