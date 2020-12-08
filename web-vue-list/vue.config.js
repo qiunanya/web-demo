@@ -5,7 +5,7 @@ module.exports = {
   // 输出文件目录
   outputDir: process.env.NODE_ENV === 'production' ? 'dist' : 'devdist',
   // eslint-loader 是否在保存的时候检查
-  lintOnSave: true,
+  lintOnSave: false,
   /** vue3.0内置了webpack所有东西，
      * webpack配置,see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
      **/
@@ -18,7 +18,8 @@ module.exports = {
       alias: {
         vue: 'vue/dist/vue.js',
         '@': path.resolve(__dirname, './src'),
-        '@components': path.resolve(__dirname, './src/components')
+        '@components': path.resolve(__dirname, './src/components'),
+        '@script': path.resolve(__dirname, './src/views/script')
       }
     }
   },
