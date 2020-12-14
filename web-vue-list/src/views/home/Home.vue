@@ -131,7 +131,7 @@ export default {
     },
   },
   created() {
-    console.log("created");
+    console.log("created1");
   },
   mounted() {
     console.log(add(14, -5), "外部引用js的求和函数");
