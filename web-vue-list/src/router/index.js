@@ -69,6 +69,14 @@ const routes = [
         meta: {
           title: 'ligth 跑马灯效果'
         }
+      },
+      {
+        path: '/dynamicRoute',
+        name: 'dynamicRoute',
+        component: () => import('@/views/templates/dynamicRoute'),
+        meta: {
+          title: '动态路由匹配组件'
+        }
       }
     ]
   },
