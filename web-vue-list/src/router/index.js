@@ -75,7 +75,7 @@ const routes = [
         name: 'dynamicRoute',
         component: () => import('@/views/templates/dynamicRoute'),
         meta: {
-          title: '动态路由匹配组件'
+          title: 'component is 匹配不同组件并显示'
         }
       }
     ]
