@@ -136,7 +136,9 @@ export default {
   mounted() {
     console.log(add(14, -5), "外部引用js的求和函数");
     this.menuList = this.$router.options.routes;
-    this.getCurrentDate();
+    setInterval(() => {
+      this.getCurrentDate();
+    }, 1000);
   },
   beforeCreate() {
     console.log("beforeCreate");
