@@ -10,25 +10,25 @@
   </div>
 </template>
 <script>
-import Approval from "@components/approval";
-import Asset from "@components/asset";
+import Approval from '@components/approval';
+import Asset from '@components/asset';
 export default {
-  name: "w3c",
+  name: 'w3c',
   components: {
     Approval,
-    Asset,
+    Asset
   },
-  data() {
+  data () {
     return {
-      currentPanl: "Asset",
+      currentPanl: 'Asset'
     };
   },
-  created() {},
+  created () {},
   methods: {
-    tabComponent(item) {
+    tabComponent (item) {
       this.currentPanl = item;
-    },
+    }
   },
-  mounted() {},
+  mounted () {}
 };
 </script>

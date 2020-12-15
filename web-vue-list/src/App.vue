@@ -1,8 +1,18 @@
 <template>
   <div id="app">
     <router-view />
+   <foot></foot>
   </div>
 </template>
+<script>
+import Foot from '@components/layout/foot';
+export default {
+  name: 'app',
+  components: {
+    Foot
+  }
+}
+</script>
 
 <style lang="scss">
 #app {

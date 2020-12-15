@@ -3,13 +3,13 @@
 </template>
 <script>
 export default {
-  name: "w3c",
+  name: 'w3c',
   components: {},
-  data() {
+  data () {
     return {};
   },
-  created() {},
+  created () {},
   methods: {},
-  mounted() {},
+  mounted () {}
 };
 </script>

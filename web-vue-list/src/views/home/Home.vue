@@ -32,13 +32,13 @@
 </template>
 
 <script>
-import { add } from "@script/index";
+import { add } from '@script/index';
 export default {
-  name: "Home",
-  data() {
+  name: 'Home',
+  data () {
     return {
       menuList: [],
-      dateFamtter: "",
+      dateFamtter: ''
     };
   },
   methods: {
@@ -46,52 +46,52 @@ export default {
      * @description 路由选择
      * @param path 路由地址
      */
-    getItem(path) {
+    getItem (path) {
       this.$router.push(path);
       console.log(path);
     },
     /**
      * @description 获取当前时间
      */
-    getCurrentDate() {
+    getCurrentDate () {
       const date = new Date();
       // 获取年
-      console.log(date.getFullYear(), "年");
+      console.log(date.getFullYear(), '年');
       // 获取月
-      console.log(date.getMonth(), "月");
+      console.log(date.getMonth(), '月');
       // 获取日
-      console.log(date.getDate(), "日");
+      console.log(date.getDate(), '日');
       // 获取时分秒
       console.log(
         date.getHours(),
         date.getMinutes(),
         date.getSeconds(),
-        "时间"
+        '时间'
       );
       // 获取当天时间
-      console.log(date.getDay(), "当天时间");
-      let xq = "";
+      console.log(date.getDay(), '当天时间');
+      let xq = '';
       switch (date.getDay()) {
         case 1:
-          xq = "星期一";
+          xq = '星期一';
           break;
         case 2:
-          xq = "星期二";
+          xq = '星期二';
           break;
         case 3:
-          xq = "星期三";
+          xq = '星期三';
           break;
         case 4:
-          xq = "星期四";
+          xq = '星期四';
           break;
         case 5:
-          xq = "星期五";
+          xq = '星期五';
           break;
         case 0:
-          xq = "星期天";
+          xq = '星期天';
           break;
         case 6:
-          xq = "星期六";
+          xq = '星期六';
           break;
         default:
           break;
@@ -101,11 +101,11 @@ export default {
     /**
      * @description 数字排序
      */
-    sortArray(arr) {
+    sortArray (arr) {
       for (let j = 0; j < arr.length; j++) {
-        for (i = j + 1; i < arr.length; i++) {
+        for (let i = j + 1; i < arr.length; i++) {
           if (arr[j] > arr[i]) {
-            let temp = arr[j];
+            const temp = arr[j];
             arr[j] = arr[i];
             arr[i] = temp;
           }
@@ -115,47 +115,47 @@ export default {
     /**
      * @description arguments 参数方式
      */
-    sums(num1, num2, ...args) {
+    sums (num1, num2, ...args) {
       let total = num1 + num2;
       for (let i = 0; i < arguments.length; i++) {
         total += arguments[i];
       }
       console.log(
-        "--------------------------argumentsc 存放所有参数，不是数组却可以用数组方式调用-------------------"
+        '--------------------------argumentsc 存放所有参数，不是数组却可以用数组方式调用-------------------'
       );
-      console.log(arguments, "arguments存放所有参数");
+      console.log(arguments, 'arguments存放所有参数');
 
-      console.log(args, "args存放多余的参数");
+      console.log(args, 'args存放多余的参数');
 
-      console.log(total, "arguments 参数方式");
-    },
+      console.log(total, 'arguments 参数方式');
+    }
   },
-  created() {
-    console.log("created1");
+  created () {
+    console.log('created1');
   },
-  mounted() {
-    console.log(add(14, -5), "外部引用js的求和函数");
+  mounted () {
+    console.log(add(14, -5), '外部引用js的求和函数');
     this.menuList = this.$router.options.routes;
     setInterval(() => {
       this.getCurrentDate();
     }, 1000);
   },
-  beforeCreate() {
-    console.log("beforeCreate");
+  beforeCreate () {
+    console.log('beforeCreate');
   },
-  beforeMount() {
-    console.log("beforeMount");
+  beforeMount () {
+    console.log('beforeMount');
     this.sums(1, 2, 88, 55, 12);
   },
-  beforeUpdate() {
-    console.log("beforeUpdate");
+  beforeUpdate () {
+    console.log('beforeUpdate');
   },
-  beforeDestroy() {
-    console.log("beforeDestroy");
+  beforeDestroy () {
+    console.log('beforeDestroy');
   },
-  destroyed() {
-    console.log("destroyed");
-  },
+  destroyed () {
+    console.log('destroyed');
+  }
 };
 </script>
 <style lang="scss" src="./style.scss">
