@@ -33,8 +33,11 @@
 
 <script>
 import { add } from '@script/index';
+import mixin from './mixin';
+import { sumTotal } from './utils.js'
 export default {
   name: 'Home',
+  mixins: [mixin],
   data () {
     return {
       menuList: [],
@@ -131,6 +134,7 @@ export default {
     }
   },
   created () {
+    console.log('父组件调用求和方法sumTotal', sumTotal(45, 78))
     console.log('created1');
   },
   mounted () {
