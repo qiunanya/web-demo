@@ -77,6 +77,14 @@ const routes = [
         meta: {
           title: 'component is 匹配不同组件并显示'
         }
+      },
+      {
+        path: '/diycommand',
+        name: 'diycommand',
+        component: () => import('@/views/templates/diy-command'),
+        meta: {
+          title: '自定义vue指令'
+        }
       }
     ]
   },

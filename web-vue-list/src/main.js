@@ -9,6 +9,17 @@ Vue.use(ViewUI)
 
 Vue.config.productionTip = false
 
+Vue.directive('mycommand', {
+  inserted (el, binding, vnode) {
+    const { value } = binding
+    if (value !== 'qiunanya') {
+      el.parentNode && el.parentNode.removeChild(el)
+    }
+    console.log(el.parentNode, value, vnode);
+    return false
+  }
+});
+
 new Vue({
   router,
   store,
