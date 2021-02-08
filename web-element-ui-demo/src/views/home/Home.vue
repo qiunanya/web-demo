@@ -3,6 +3,7 @@
     <div class="home_wap">
       <img src="@/assets/logo.png" alt srcset />
       <h2>WEB 前端 CSS3.0 JS HTML5 技术</h2>
+      <router-link to="/home/main"> 首頁 </router-link>
     </div>
   </div>
 </template>
