@@ -1,34 +1,26 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/home/home.vue'
+import layout from '@/components/layout/index.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
     {
         path: '/',
-        name: 'index',
-        redirect: 'home',
-        children: [{
-            path: 'home',
-            name: 'home',
-            meta: {
-                icon: "ios-globe",
-                title: "首頁"
-            },
-            component: () => import('../views/home'),
-            redirect: '/home/main',
-            children:[
-                {
-                    path: 'main',
-                    name: 'overview',
-                    meta: {
-                        title: '首页',
-                        icon: ' ',
-                    },
-                    component: () => import('../views/home/main')
-                }]
-        }]
+        name: 'home',
+        component: () => import('../views/home/main'),
+        redirect: '/home/category',
+        children:[
+            {
+                path: '/home/category',
+                name: 'category',
+                component: () => import('../views/category/js-item'),
+                meta: {
+                    title: '分类列表',
+                    icon: '',
+                },
+            }
+        ]
     },
     {
         path: '/about',
@@ -36,7 +28,7 @@ const routes = [
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+        component: () => import('../views/About.vue')
     }
 ]
 

@@ -1,0 +1,14 @@
+.app_foot {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #000;
+    .foot_wap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #16a596;
+        padding: 10px 0;
+        opacity: 0.9;
+    }
+}
