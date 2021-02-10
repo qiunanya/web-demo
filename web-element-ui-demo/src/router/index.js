@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import layout from '@/components/layout/index.vue'
+
+import AppFoot from '@/components/layout/app-foot'
+import AppHead from '@/components/layout/app-head'
 
 Vue.use(VueRouter)
 
@@ -8,12 +10,16 @@ const routes = [
     {
         path: '/',
         name: 'home',
-        component: () => import('../views/home/main'),
+        // components: {
+        //     head: AppHead, // 命名视图头部
+        //     foot: AppFoot // 命名视图底部
+        // },
+        component: () => import('../views/home/main'), // 组件自己的router-view
         redirect: '/home/category',
         children:[
             {
-                path: '/home/category',
-                name: 'category',
+                path: '/home/category',// 当为第一个子路由时，默认为空即可作为默认访问的路由
+                name: 'category', // 路由名称：分类
                 component: () => import('../views/category/js-item'),
                 meta: {
                     title: '分类列表',

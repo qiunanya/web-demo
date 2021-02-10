@@ -1,21 +1,21 @@
 <template>
     <div id="app">
         <app-head></app-head>
-        <!-- <app-menu></app-menu> -->
+        <!-- 视图路由 -->
+        <!-- <router-view name="head"></router-view> -->
         <router-view></router-view>
+        <!-- <router-view name="foot"></router-view> -->
         <app-foot></app-foot>
     </div>
 </template>
 <script>
 import AppHead from '@/components/layout/app-head'
 import AppFoot from '@/components/layout/app-foot'
-import AppMenu from '@/components/layout/app-menu'
 
 export default {
     components:{
         AppHead,
         AppFoot,
-        AppMenu
     }
 }
 </script>
