@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 import AppFoot from '@/components/layout/app-foot'
 import AppHead from '@/components/layout/app-head'
+import LayOut from '@/components/layout'
 
 Vue.use(VueRouter)
 
@@ -14,7 +15,8 @@ const routes = [
         //     head: AppHead, // 命名视图头部
         //     foot: AppFoot // 命名视图底部
         // },
-        component: () => import('../views/home/main'), // 组件自己的router-view
+        // component: () => import('../views/home/main'), // 组件自己的router-view
+        component: LayOut, // 组件自己的router-view
         redirect: '/home/category',
         children:[
             {
@@ -23,6 +25,15 @@ const routes = [
                 component: () => import('../views/category/js-item'),
                 meta: {
                     title: '分类列表',
+                    icon: '',
+                },
+            },
+            {
+                path: '/home/test',
+                name: 'test', 
+                component: () => import('../views/category/test'),
+                meta: {
+                    title: '测试',
                     icon: '',
                 },
             }

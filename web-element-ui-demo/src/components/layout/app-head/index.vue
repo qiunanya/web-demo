@@ -47,6 +47,9 @@ export default {
 			console.log(key, keyPath);
 		},
 	},
+    mounted() {
+        console.log(this.$router,5555)
+    },
 };
 </script>
 <style lang="scss" src="./style.scss">
