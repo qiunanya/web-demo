@@ -1,5 +1,5 @@
 <template>
-	<div class="popup">测试</div>
+	<div class="popup">弹窗测试</div>
 </template>
 
 <script>

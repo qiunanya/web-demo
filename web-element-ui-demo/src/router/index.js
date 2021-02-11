@@ -1,8 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
-import AppFoot from '@/components/layout/app-foot'
-import AppHead from '@/components/layout/app-head'
 import LayOut from '@/components/layout'
 
 Vue.use(VueRouter)
@@ -22,21 +19,31 @@ const routes = [
             {
                 path: '/home/category',// 当为第一个子路由时，默认为空即可作为默认访问的路由
                 name: 'category', // 路由名称：分类
-                component: () => import('../views/category/js-item'),
+                component: () => import('../views/category/main'),
                 meta: {
                     title: '分类管理',
                     icon: '',
                 },
+                redirect: '/home/category/test',
                 children:[
                     {
-                        path: '/category/test',
+                        path: '/home/category/test',
                         name: 'category-test', 
                         component: () => import('../views/category/test'),
                         meta: {
-                            title: '测试',
+                            title: '分类测试',
                             icon: '',
                         },
                     },
+                    {
+                        path: '/home/category/js-item',
+                        name: 'category-js-item', 
+                        component: () => import('../views/category/js-item'),
+                        meta: {
+                            title: 'JS ITME 测试',
+                            icon: '',
+                        },
+                    }
                 ]
             },
             {
@@ -44,7 +51,7 @@ const routes = [
                 name: 'home-popup', 
                 component: () => import('../views/popup'),
                 meta: {
-                    title: '测试管理',
+                    title: '弹窗组件',
                     icon: '',
                 },
             },
@@ -66,5 +73,13 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+/**
+ * @description 解决：点击相同路由虽然不影响运行，但是控制台会报错问题
+ */
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 
 export default router

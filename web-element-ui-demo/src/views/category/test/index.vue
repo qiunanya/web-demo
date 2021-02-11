@@ -1,5 +1,5 @@
 <template>
-	<div class="test">测试</div>
+	<div class="test">分类测试</div>
 </template>
 
 <script>
