@@ -24,28 +24,40 @@ const routes = [
                 name: 'category', // 路由名称：分类
                 component: () => import('../views/category/js-item'),
                 meta: {
-                    title: '分类列表',
+                    title: '分类管理',
+                    icon: '',
+                },
+                children:[
+                    {
+                        path: '/category/test',
+                        name: 'category-test', 
+                        component: () => import('../views/category/test'),
+                        meta: {
+                            title: '测试',
+                            icon: '',
+                        },
+                    },
+                ]
+            },
+            {
+                path: '/home/popup',
+                name: 'home-popup', 
+                component: () => import('../views/popup'),
+                meta: {
+                    title: '测试管理',
                     icon: '',
                 },
             },
             {
-                path: '/home/test',
-                name: 'test', 
-                component: () => import('../views/category/test'),
+                path: '/home/about',
+                name: 'home-about', 
+                component: () => import('../views/about'),
                 meta: {
-                    title: '测试',
+                    title: '关于我们',
                     icon: '',
-                },
+                }
             }
         ]
-    },
-    {
-        path: '/about',
-        name: 'About',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import('../views/About.vue')
     }
 ]
 

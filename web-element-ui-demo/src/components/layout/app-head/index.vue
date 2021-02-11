@@ -48,7 +48,7 @@ export default {
 		},
 	},
     mounted() {
-        console.log(this.$router,5555)
+        console.log(this.$router.options.routes[0].children,5555)
     },
 };
 </script>
