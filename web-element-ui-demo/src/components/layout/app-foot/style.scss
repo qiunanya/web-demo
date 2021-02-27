@@ -2,14 +2,13 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    color: #000;
     .foot_wap {
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #545c64;
+        // background: #545c64;
         padding: 10px 0;
         opacity: 0.9;
-        color: #ffffff;
+        color: #000;
     }
 }

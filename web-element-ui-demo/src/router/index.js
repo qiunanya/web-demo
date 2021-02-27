@@ -23,6 +23,7 @@ const routes = [
                 meta: {
                     title: '分类管理',
                     icon: '',
+                    index: 1
                 },
                 redirect: '/home/category/test',
                 children:[
@@ -33,6 +34,7 @@ const routes = [
                         meta: {
                             title: '分类测试',
                             icon: '',
+                            index: 2,
                         },
                     },
                     {
@@ -42,6 +44,7 @@ const routes = [
                         meta: {
                             title: 'JS ITME 测试',
                             icon: '',
+                            index: 3,
                         },
                     }
                 ]
@@ -53,6 +56,7 @@ const routes = [
                 meta: {
                     title: '弹窗组件',
                     icon: '',
+                    index: 4
                 },
             },
             {
@@ -62,6 +66,7 @@ const routes = [
                 meta: {
                     title: '关于我们',
                     icon: '',
+                    index: 5
                 }
             }
         ]

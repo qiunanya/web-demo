@@ -19,7 +19,6 @@ export default {
 	methods: {
 		handleSelect(item, index) {
             this.$router.push({ name: item.name, params: { id: index }})
-			console.log(item, index);
 		},
 	},
     mounted() {

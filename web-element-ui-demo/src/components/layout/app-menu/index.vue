@@ -37,24 +37,20 @@ export default {
     data() {
         return {
             menuList:[],
-            activeIndex2: "2",
+            activeIndex2: "1-1",
         };
     },
     methods: {
         handleSelect(item, index) {
             this.$router.push({ name: item.name, params: { id: index }})
-            console.log(item, index);
         },
         handleOpen(key, keyPath) {
-            console.log(key, keyPath);
         },
         handleClose(key, keyPath) {
-            console.log(key, keyPath);
         }
     },
     mounted() {
         this.menuList = this.$router.options.routes[0].children
-        console.log(this.$router.options.routes[0].children,5555)
     },
 };
 </script>
