@@ -1,6 +1,6 @@
 <template>
 	<div class="head_wrapper">
-        <div class="info_item">
+        <div class="info_item" @click="handleToHome">
             <img src="@/assets/logo.png">
             <h2>糖果博客</h2>
         </div>
@@ -28,6 +28,9 @@ export default {
 		handleSelect(item, index) {
             this.$router.push({ name: item.name, params: { id: index }})
 		},
+        handleToHome: function(){
+            this.$router.push('/')
+        }
 	},
     mounted() {
         this.menuList = this.$router.options.routes[0].children
