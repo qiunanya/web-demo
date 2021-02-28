@@ -3,7 +3,7 @@
         <el-menu
 			:default-active="activeIndex2"
 			class="el-menu-demo"
-			mode="vertical"
+			mode="horizontal"
 			background-color="#545c64"
 			text-color="#fff"
 			active-text-color="#ffd04b"

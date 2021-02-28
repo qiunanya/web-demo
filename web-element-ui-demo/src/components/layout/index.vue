@@ -4,9 +4,9 @@
             <app-head></app-head>
         </div>
         <div class="app_content">
-            <div class="menu">
+            <!-- <div class="menu">
                 <app-menu></app-menu>
-            </div>
+            </div> -->
             <div class="content">
                 <transition :name="transitionName">   
                     <router-view></router-view>

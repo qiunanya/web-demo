@@ -1,15 +1,23 @@
 <template>
 	<div class="head_wrapper">
-        <img src="@/assets/logo.png">
-		<h2>JavaScript For Function</h2>
+        <div class="info_item">
+            <img src="@/assets/logo.png">
+            <h2>JavaScript For Function</h2>
+        </div>
+        <div class="menu_item">
+            <app-menu></app-menu>
+        </div>
 	</div>
 </template>
 
 <script>
 // @ is an alias to /src
+import AppMenu from '@/components/layout/app-menu'
 export default {
 	name: "Home",
-	components: {},
+	components: {
+        AppMenu
+    },
 	data() {
 		return {
             menuList:[],
