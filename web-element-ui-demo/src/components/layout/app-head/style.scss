@@ -7,6 +7,7 @@
     .info_item{
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
         img {
             width: 50px;
             height: 50px;
@@ -15,6 +16,7 @@
         h2 {
             padding: 0;
             line-height: 1;
+            margin: auto 5px;
         }
     }
 }

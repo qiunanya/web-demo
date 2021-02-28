@@ -3,7 +3,7 @@
         <!-- <app-head></app-head> -->
         <!-- 视图路由 -->
         <!-- <router-view name="head"></router-view> -->
-        <router-view></router-view>
+        <router-view v-wechat-title="$route.meta.title"></router-view>
         <!-- <router-view name="foot"></router-view> -->
         <!-- <app-foot></app-foot> -->
     </div>

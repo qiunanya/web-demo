@@ -9,7 +9,7 @@
             </div> -->
             <div class="content">
                 <transition :name="transitionName">   
-                    <router-view></router-view>
+                    <router-view ></router-view>
                 </transition>
             </div>
         </div>

@@ -6,9 +6,13 @@ import Api from '@/script/api'
 import Ajax from '@/script/http'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import VueWechatTitle from 'vue-wechat-title'
 
+Vue.use(VueWechatTitle)
 Vue.use(ElementUI)
+
 Vue.config.productionTip = false
+
 Vue.prototype.$api = window.Api = Api;
 Vue.prototype.$ajax = window.Ajax = Ajax;
 

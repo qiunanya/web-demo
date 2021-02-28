@@ -2,7 +2,7 @@
 	<div class="head_wrapper">
         <div class="info_item">
             <img src="@/assets/logo.png">
-            <h2>JavaScript For Function</h2>
+            <h2>糖果博客</h2>
         </div>
         <div class="menu_item">
             <app-menu></app-menu>
