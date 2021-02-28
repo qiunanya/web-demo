@@ -13,7 +13,7 @@
 <script>
 // @ is an alias to /src
 import AppMenu from '@/components/layout/app-menu'
-export default {
+export default {    
 	name: "Home",
 	components: {
         AppMenu
