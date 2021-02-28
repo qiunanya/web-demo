@@ -1,3 +1,15 @@
 .app_menu {
-   min-width: 200px;
+    min-width: 200px;
+    .el-menu.el-menu--horizontal{
+        border-bottom: 1px solid #34626c;
+    }
+    .el-menu-demo{
+        background-color: #34626c !important;
+        .el-submenu__title, .el-menu-item{
+            background-color: #34626c !important;
+            .el-menu-item{
+                background-color: #34626c !important;
+            }
+        }
+    }
 }

@@ -1,77 +1,88 @@
-const path = require('path');
+'use strict'
+const path = require('path')
+
+function resolve (dir) {
+  return path.join(__dirname, dir)
+}
+
+const name = '糖果博客管理系统' // 标题
+
+const port = process.env.port || process.env.npm_config_port || 8089 // 端口
+
 module.exports = {
-    // 基本路径
-    publicPath: process.env.NODE_ENV === 'production' ? '' : '/',
-    // 输出文件目录
-    outputDir: process.env.NODE_ENV === 'production' ? 'dist' : 'devdist',
-    // eslint-loader 是否在保存的时候检查
-    lintOnSave: false,
-    /** vue3.0内置了webpack所有东西，
-     * webpack配置,see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
-     **/
-    chainWebpack: (config) => {
-        config.resolve.symlinks(true);       
-    },
-    configureWebpack: (config) => {
-        config.resolve = { // 配置解析别名
-            extensions: ['.js', '.json', '.vue'],  // 自动添加文件名后缀
-            alias: {
-                'vue': 'vue/dist/vue.js',
-                '@': path.resolve(__dirname, './src'),
-                '@components': path.resolve(__dirname, './src/components')
-            }
+  // publicPath: 项目基础路径，这个值也可以被设置为空字符串 ('') 或是相对路径 ('./')
+  publicPath: process.env.NODE_ENV === 'production' ? '/' : '/',
+  // 生成的生产环境构建文件的目录名称
+  outputDir: 'dist',
+  // 放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录
+  assetsDir: 'static',
+  // 是否开启eslint代码检测, 生产环境不开启
+  lintOnSave: false,
+  // 如果你不需要生产环境的 source map，可以将其设置为 false 以加速生产环境构建。
+  productionSourceMap: false,
+  devServer: {
+    host: '127.0.0.1',
+    open: true,
+    port: port,
+    proxy: {
+      [process.env.VUE_APP_BASE_API]: {
+        target: 'http://www.qiuaiyun.top:8080',
+        changeOrigin: true,
+        pathRewrite: {
+          ['^' + process.env.VUE_APP_BASE_API]: ''
         }
+      }
+    //   '/foo': {
+    //     target: 'http://www.qiuaiyun.top:8080'
+    //   }
     },
-    // 生产环境是否生成 sourceMap 文件
-    productionSourceMap: false,
-    // css相关配置
-    css: {
-        // 是否使用css分离插件（只用在生产环境中，当为开发环境时true会导致热部署样式失败）
-        //extract: true,
-        // 开启 CSS source maps?
-        sourceMap: false,
-        // css预设器配置项
-        loaderOptions: {
-            less: {
-                data: `@import "@/assets/styles/main.less";`
-            }
-        },
-        // 启用 CSS modules for all css / pre-processor files.
-        requireModuleExtension: true
-    },
-    // use thread-loader for babel & TS in production build
-    // enabled by default if the machine has more than 1 cores
-    parallel: require('os').cpus().length > 1,
-    /**
-     *  PWA 插件相关配置,see https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa
-     */
-    pwa: {},
-    // webpack-dev-server 相关配置
-    devServer: {
-        open: true, // 编译完成是否打开网页
-        host: '0.0.0.0', // 指定使用地址，默认localhost,0.0.0.0代表可以被外界访问
-        port: 8888, // 访问端口
-        https: false, // 编译失败时刷新页面
-        hot: true, // 开启热加载
-        hotOnly: false,
-        proxy: {
-            '/devApi': {//http://www.web-jshtml.cn/productapi/token
-                target: "http://www.web-jshtml.cn/productapi/token", //API服务器的地址  http://www.web-jshtml.cn/api
-                changeOrigin: true,
-                pathRewrite: {
-                    '^/devApi': ''
-                }
-            }
-        },
-        overlay: { // 全屏模式下是否显示脚本错误
-            warnings: true,
-            errors: true
-        },
-        before: app => {
+    // 新版webpack检测主机名，不一致将中断访问
+    disableHostCheck: true
+  },
+  // 配置项目别名
+  configureWebpack: {
+    name: name,
+    resolve: {
+      alias: {
+        '@': resolve('src'),
+        '@components': resolve('src/components'),
+        '@script': resolve('src/views/script')
+      }
+    }
+  },
+  // 配置项目细粒度修改
+  chainWebpack: config => {
+    config
+      .plugin('html')
+      .tap(args => {
+        args[0].title = name
+        return args
+      })
+  },
+  css: {
+    loaderOptions: {
+      // 给 sass-loader 传递选项
+      sass: {
+        // @/ 是 src/ 的别名
+        // 所以这里假设你有 `src/variables.sass` 这个文件
+        // 注意：在 sass-loader v8 中，这个选项名是 "prependData"
+        additionalData: '@import "@/assets/css/global.scss";'
+      },
+      // 默认情况下 `sass` 选项会同时对 `sass` 和 `scss` 语法同时生效
+      // 因为 `scss` 语法在内部也是由 sass-loader 处理的
+      // 但是在配置 `prependData` 选项的时候
+      // `scss` 语法会要求语句结尾必须有分号，`sass` 则要求必须没有分号
+      // 在这种情况下，我们可以使用 `scss` 选项，对 `scss` 语法进行单独配置
+      scss: {
+        additionalData: '@import "@/assets/css/global.scss";'
+      },
+      // 给 less-loader 传递 Less.js 相关选项
+      less: {
+        globalVars: {
+          primary: '#fff'
         }
-    },
-    /**
-     * 第三方插件配置
-     */
-    pluginOptions: {}
+      }
+    }
+  }
+
 }
