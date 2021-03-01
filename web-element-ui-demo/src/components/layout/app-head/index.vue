@@ -4,7 +4,7 @@
             <img src="@/assets/logo.png">
             <h2>糖果博客</h2>
         </div>
-        <div class="menu_item">    
+        <div class="menu_item">          
             <app-menu></app-menu>  
         </div>
 	</div>
